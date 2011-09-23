@@ -23,29 +23,29 @@
 %% @doc <html>An exported function for the first initialization <br/> the function spawn a loop process to receive message </html>
 %% @spec init() -> pid()
 init() ->
-	register(?MODULE, spawn(clientChat, loop, [])),
+	register(?MODULE, spawn(clientChat, loop, [self()])),
 	?MODULE.
 
 %% @doc <html> A process which will be waiting for the comming messeges </html>
-%% @spec loop() -> ok | true
-loop () ->
+%% @spec loop(pid()) -> ok | true
+loop (JPid) ->
 	receive
-		connect -> 
+		{Pid, connect} -> 
 			io:format("hey connect~n", []),
 			spawn(?MODULE, connect, []),
-			?MODULE:loop();
+			?MODULE:loop(Pid);
 		{message, Message}->
 			io:format("hey message~n", []),
 			spawn(?MODULE, sendMessage, [Message]),
-			?MODULE:loop();
+			?MODULE:loop(JPid);
 		{connected,ok} ->
 			io:format("Connected!!~n"),
-			spawn(fun() -> {clientSof, 'java@Amir-PC'} ! {connected, ok} end),
-			?MODULE:loop();
+			spawn(fun() -> JPid ! {connected, ok} end),
+			?MODULE:loop(JPid);
 		{message, Message, from, Node, Pid} -> 
 			showInfo(Message, Node, Pid),
-			spawn(fun() -> {clientSof, 'java@Amir-PC'} ! {message, Message} end),
-			?MODULE:loop();	
+			spawn(fun() -> JPid ! {message, Node, Pid, Message} end),
+			?MODULE:loop(JPid);	
 		Unecpected -> io:format("something is wrong, one unexpected message has been received ~p~n", [Unecpected])
 	end.
 
