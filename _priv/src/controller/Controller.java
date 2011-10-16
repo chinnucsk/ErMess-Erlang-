@@ -22,7 +22,6 @@ public class Controller {
     OtpErlangTuple msg;
     OtpErlangPid from;
     OtpErlangAtom ok;
-    User user = new User();
 
     public Controller() {
 

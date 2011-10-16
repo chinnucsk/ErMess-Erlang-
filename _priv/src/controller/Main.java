@@ -8,7 +8,7 @@ import gui.PmChat;
 
 
 /**
- * A class to implement the client chat box for the user to
+ * A class to implement the client chat box for the user
  *
  * @author Amir Almasi
  * @version 0.1.0.1
