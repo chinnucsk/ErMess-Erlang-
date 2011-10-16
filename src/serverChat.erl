@@ -1,4 +1,4 @@
-%% @author Amir Almasi
+%% @author Amir Almasi <amir.fireflame@gmail.com>
 %% @module serverChat.erl
 %% @doc the purpose of this module is, to implement a small chat system between different computers
 %% @version 0.1.0.1

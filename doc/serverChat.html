@@ -1,0 +1,83 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Module serverChat</title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" title="EDoc">
+</head>
+<body bgcolor="white">
+<div class="navbar"><a name="#navbar_top"></a><table width="100%" border="0" cellspacing="0" cellpadding="2" summary="navigation bar"><tr><td><a href="overview-summary.html" target="overviewFrame">Overview</a></td><td><a href="http://www.erlang.org/"><img src="erlang.png" align="right" border="0" alt="erlang logo"></a></td></tr></table></div>
+<hr>
+
+<h1>Module serverChat</h1>
+<ul class="index"><li><a href="#description">Description</a></li><li><a href="#index">Function Index</a></li><li><a href="#functions">Function Details</a></li></ul>the purpose of this module is, to implement a small chat system between different computers.
+
+<p><b>Version:</b> 0.1.0.1
+  @ todo: there are alot left.
+  Created: Sep 8, 2011</p>
+<p><b>Authors:</b> Amir Almasi.</p>
+
+<h2><a name="description">Description</a></h2>the purpose of this module is, to implement a small chat system between different computers
+<h2><a name="index">Function Index</a></h2>
+<table width="100%" border="1" cellspacing="0" cellpadding="2" summary="function index"><tr><td valign="top"><a href="#init-0">init/0</a></td><td><html>An exported function to for the first initialization <br> the function spawn a loop process to receive message </html></td></tr>
+<tr><td valign="top"><a href="#loop-1">loop/1</a></td><td><html> A process which will be waiting for the comming messeges </html></td></tr>
+<tr><td valign="top"><a href="#sendMessage-4">sendMessage/4</a></td><td><html> A function to send a message to a process </html></td></tr>
+<tr><td valign="top"><a href="#showClients-0">showClients/0</a></td><td><html> A function to send a message to the main process for asking clients list </html></td></tr>
+<tr><td valign="top"><a href="#showClients-1">showClients/1</a></td><td><html> A function to get the client list and print out them one by one </html></td></tr>
+<tr><td valign="top"><a href="#showETS-0">showETS/0</a></td><td><html> A function to start tv to show all the tables for debugging </html></td></tr>
+<tr><td valign="top"><a href="#showInfo-1">showInfo/1</a></td><td><html> A function to print out the received messages </html></td></tr>
+<tr><td valign="top"><a href="#terminate-0">terminate/0</a></td><td><html> A function to terminate the loop process by sending a message </html></td></tr>
+<tr><td valign="top"><a href="#testRecord-0">testRecord/0</a></td><td><html> A method to test included record if it works properly or not </html></td></tr>
+</table>
+
+<h2><a name="functions">Function Details</a></h2>
+
+<h3 class="function"><a name="init-0">init/0</a></h3>
+<div class="spec">
+<p><tt>init() -&gt; atom()</tt><br></p>
+</div><p><html>An exported function to for the first initialization <br> the function spawn a loop process to receive message </html></p>
+
+<h3 class="function"><a name="loop-1">loop/1</a></h3>
+<div class="spec">
+<p><tt>loop(ClientList::list()) -&gt; ok | true</tt><br></p>
+</div><p><html> A process which will be waiting for the comming messeges </html></p>
+
+<h3 class="function"><a name="sendMessage-4">sendMessage/4</a></h3>
+<div class="spec">
+<p><tt>sendMessage(Message::term(), Node::node(), Pid::pid(), T::list()) -&gt; ok</tt><br></p>
+</div><p><html> A function to send a message to a process </html></p>
+
+<h3 class="function"><a name="showClients-0">showClients/0</a></h3>
+<div class="spec">
+<p><tt>showClients() -&gt; ok</tt><br></p>
+</div><p><html> A function to send a message to the main process for asking clients list </html></p>
+
+<h3 class="function"><a name="showClients-1">showClients/1</a></h3>
+<div class="spec">
+<p><tt>showClients(T::list()) -&gt; ok</tt><br></p>
+</div><p><html> A function to get the client list and print out them one by one </html></p>
+
+<h3 class="function"><a name="showETS-0">showETS/0</a></h3>
+<div class="spec">
+<p><tt>showETS() -&gt; ok</tt><br></p>
+</div><p><html> A function to start tv to show all the tables for debugging </html></p>
+
+<h3 class="function"><a name="showInfo-1">showInfo/1</a></h3>
+<div class="spec">
+<p><tt>showInfo(Message::list()) -&gt; ok</tt><br></p>
+</div><p><html> A function to print out the received messages </html></p>
+
+<h3 class="function"><a name="terminate-0">terminate/0</a></h3>
+<div class="spec">
+<p><tt>terminate() -&gt; ok</tt><br></p>
+</div><p><html> A function to terminate the loop process by sending a message </html></p>
+
+<h3 class="function"><a name="testRecord-0">testRecord/0</a></h3>
+<div class="spec">
+<p><tt>testRecord() -&gt; <a href="#type-record">record()</a></tt><br></p>
+</div><p><html> A method to test included record if it works properly or not </html></p>
+<hr>
+
+<div class="navbar"><a name="#navbar_bottom"></a><table width="100%" border="0" cellspacing="0" cellpadding="2" summary="navigation bar"><tr><td><a href="overview-summary.html" target="overviewFrame">Overview</a></td><td><a href="http://www.erlang.org/"><img src="erlang.png" align="right" border="0" alt="erlang logo"></a></td></tr></table></div>
+<p><i>Generated by EDoc, Oct 16 2011, 20:31:30.</i></p>
+</body>
+</html>
